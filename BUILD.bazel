@@ -115,3 +115,17 @@ cc_test(
         "@com_google_googletest//:gtest_main",
     ],
 )
+
+
+cc_library(
+    name = "raftnode_lib",
+    hdrs = glob(["src/client/*.h"]),
+    srcs = glob(["src/client/metable_client.cc",]),
+    strip_include_prefix = "//src",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":common_lib",
+        ":rpc_cc_grpc",
+        "@com_github_grpc_grpc//:grpc++",
+    ],
+)

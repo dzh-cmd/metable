@@ -1,0 +1,17 @@
+
+syntax = "proto3";
+option cc_enable_arenas = true;
+
+package metable.rpc;
+
+service Node {
+  rpc RequestVote(VoteRequest) returns (VoteReply) {}
+}
+
+message VoteRequest {
+
+}
+
+message VoteReply {
+
+}
